@@ -1,0 +1,436 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* ===== App Container ===== */
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* ===== URL Input Page ===== */
+.url-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.url-input-container h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1db954, #fa57c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+}
+
+.url-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.url-input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.url-input:focus {
+  border-color: #1db954;
+}
+
+.url-input::placeholder {
+  color: #555;
+}
+
+.supported-links {
+  margin-top: 24px;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.supported-links code {
+  display: block;
+  margin-top: 4px;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  color: #000;
+}
+
+.btn-secondary {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.btn-back {
+  background: none;
+  color: #888;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+}
+
+.btn-back:hover {
+  color: #e0e0e0;
+}
+
+.btn-skip {
+  background: none;
+  color: #888;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.btn-skip:hover {
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.btn-skip.active {
+  background: #333;
+  color: #fa57c1;
+  border-color: #fa57c1;
+}
+
+/* ===== Error Banner ===== */
+.error-banner {
+  background: #3a1a1a;
+  border: 1px solid #cc3333;
+  border-radius: 10px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-banner p {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.error-dismiss {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+/* ===== Track Review ===== */
+.review-header {
+  margin-bottom: 24px;
+}
+
+.review-header h2 {
+  font-size: 1.6rem;
+  margin-top: 12px;
+}
+
+.review-summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.badge-matched {
+  background: #1a3a1a;
+  color: #1db954;
+}
+
+.badge-review {
+  background: #3a3a1a;
+  color: #f5c542;
+}
+
+.badge-nomatch {
+  background: #3a1a1a;
+  color: #ff6b6b;
+}
+
+.review-section {
+  margin-bottom: 32px;
+}
+
+.review-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.section-desc {
+  font-size: 0.88rem;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+/* ===== Track Lists ===== */
+.track-list {
+  list-style: none;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.track-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.track-art-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.track-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  font-size: 0.82rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-album {
+  font-size: 0.78rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.track-matched .match-icon {
+  color: #1db954;
+}
+
+.track-nomatch .match-icon {
+  color: #ff6b6b;
+}
+
+/* ===== Close Match Selector ===== */
+.close-match-selector {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.close-match-selector.skipped {
+  opacity: 0.5;
+}
+
+.source-track {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a2a;
+  margin-bottom: 12px;
+}
+
+.alternatives-label {
+  font-size: 0.82rem;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.alternatives-list {
+  list-style: none;
+}
+
+.alternative-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-bottom: 4px;
+}
+
+.alternative-item:hover {
+  background: #252525;
+}
+
+.alternative-item.selected {
+  background: #1a3a1a;
+  border: 1px solid #1db954;
+}
+
+.selected-icon {
+  color: #1db954;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ===== Review Actions ===== */
+.review-actions {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.review-hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* ===== Playlist Created ===== */
+.playlist-created-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  color: #000;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.playlist-created-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.playlist-created-container p {
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.created-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 560px) {
+  .url-form {
+    flex-direction: column;
+  }
+
+  .url-input {
+    width: 100%;
+  }
+
+  .review-summary {
+    justify-content: center;
+  }
+}
